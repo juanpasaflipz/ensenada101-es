@@ -587,7 +587,38 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Wave transition: location → social */}
+        {/* ════════════════════════════════════════
+            VIDEO 2
+        ════════════════════════════════════════ */}
+        <section className="relative w-full py-16 md:py-24 overflow-hidden bg-teal-950">
+          {/* Blurred background fill from the same video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover scale-150 blur-3xl opacity-30"
+          >
+            <source src="/promo2.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-teal-950/50" />
+          {/* Centered vertical video */}
+          <div className="relative z-10 flex justify-center px-6">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/30 max-w-[280px] sm:max-w-[320px]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto"
+              >
+                <source src="/promo2.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </section>
+
+        {/* Wave transition: video2 → social */}
         <WaveDivider color="#042f2e" />
 
         {/* ════════════════════════════════════════
