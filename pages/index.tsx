@@ -343,16 +343,30 @@ const Home: NextPage = () => {
         ════════════════════════════════════════ */}
         <section id="product" className="py-20 md:py-32 px-6 bg-white">
           <div className="max-w-5xl mx-auto">
-            <FadeIn>
-              <p className="text-sm uppercase tracking-[0.25em] text-teal-600 font-bold mb-4">
-                Directo de la Costa
-              </p>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wide text-neutral-900 leading-[0.95]">
-                Estilo Ensenada.
-                <br />
-                <span className="text-teal-600">Sin Atajos.</span>
-              </h2>
-            </FadeIn>
+            {/* Hero image + headline split */}
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <FadeIn>
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-teal-600 font-bold mb-4">
+                    Directo de la Costa
+                  </p>
+                  <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wide text-neutral-900 leading-[0.95]">
+                    Estilo Ensenada.
+                    <br />
+                    <span className="text-teal-600">Sin Atajos.</span>
+                  </h2>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.15}>
+                <div className="relative">
+                  <img
+                    src="/fish-taco.png"
+                    alt="Ensenada 101 Taco de Pescado"
+                    className="w-full max-w-md mx-auto drop-shadow-2xl"
+                  />
+                </div>
+              </FadeIn>
+            </div>
 
             <div className="mt-14 md:mt-20 grid md:grid-cols-3 gap-10">
               {[
@@ -403,7 +417,35 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Wave transition: product → menu */}
+        {/* ════════════════════════════════════════
+            VIDEO
+        ════════════════════════════════════════ */}
+        <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] overflow-hidden bg-teal-950">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/promo.mp4" type="video/mp4" />
+          </video>
+          {/* Teal overlay */}
+          <div className="absolute inset-0 bg-teal-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-teal-950/60 via-transparent to-teal-950/30" />
+          {/* Centered text */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <FadeIn>
+              <p className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white text-center leading-tight drop-shadow-lg">
+                De Ensenada
+                <br />
+                <span className="text-teal-300">a Tu Mesa.</span>
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Wave transition: video → menu */}
         <WaveDivider color="#f0fdfa" />
 
         {/* ════════════════════════════════════════
